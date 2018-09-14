@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -48,13 +49,15 @@ public class Test1 {
 		
 		dcp.setCapability("name", "PHP");
 		
-		dcp.setCapability("idleTimeout", 150);
+		dcp.setCapability("idleTimeout", 100);
 		
 		driver = new RemoteWebDriver(new URL("http://10.85.92.65:4444/wd/hub"),dcp);
 		
 	
-		//System.setProperty("webdriver.chrome.driver","D:\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver(); 
+//		System.setProperty("webdriver.chrome.driver","D:\\chromedriver_win32\\chromedriver.exe");
+//		driver = new ChromeDriver();
+//		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
 		//driver.manage().window().maximize();
 		
 		/*System.setProperty("webdriver.ie.driver","D:\\drivers\\IEDriverServer_Win32_3.0.0\\IEDriverServer.exe");

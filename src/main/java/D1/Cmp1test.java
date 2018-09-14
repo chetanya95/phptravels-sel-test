@@ -13,15 +13,23 @@ public class Cmp1test {
 				/*sd.setUp();
 				sd.test();
 				sd.tearDown();*/
-				JUnitCore junit = new JUnitCore();
-				  junit.addListener(new TextListener(System.out));
-				  Result result = junit.run(Test1.class); // Replace "SampleTest" with the name of your class
-				  if (result.getFailureCount() > 0) {
-				    System.out.println("Test failed.");
-				    System.exit(1);
-				  } else {
-				    System.out.println("Test finished successfully.");
-				    System.exit(0);
-				  }
+		JUnitCore junit = new JUnitCore();
+		junit.addListener(new TextListener(System.out));
+		
+		long startTime = System.currentTimeMillis();
+		
+		Result result = junit.run(Test1.class); // Replace "SampleTest" with the name of your class
+		
+		long endTime = System.currentTimeMillis();
+		System.out.println("That took " + (endTime - startTime) + " milliseconds");
+		
+		if (result.getFailureCount() > 0) {
+		    System.out.println("Test failed.");
+		    System.exit(1);
+		} else {
+		    System.out.println("Test finished successfully.");
+		    System.exit(0);
+		}
+		
 	}
 }
