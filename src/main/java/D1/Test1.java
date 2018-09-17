@@ -51,7 +51,7 @@ public class Test1 {
 		
 		dcp.setCapability("idleTimeout", 100);
 		
-		driver = new RemoteWebDriver(new URL("http://10.85.92.65:4444/wd/hub"),dcp);
+		driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"),dcp);
 		
 	
 //		System.setProperty("webdriver.chrome.driver","D:\\chromedriver_win32\\chromedriver.exe");
